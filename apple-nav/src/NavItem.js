@@ -11,9 +11,9 @@ export default class NavItem extends React.Component {
     return (
       <div>
         {
-          this.props.navItem.subNav.map(x => {
+          this.props.navItem.subNav.map(subItem => {
             return (
-              <Link to="/asdf">{x}</Link>
+              <Link to="/asdf">{subItem}</Link>
             )
           })
         }
