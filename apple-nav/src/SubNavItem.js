@@ -6,17 +6,12 @@ export default class SubNavItem extends React.Component {
   render() {
     return (
       <div>
-        {console.log(this.props.navItem.name)}
-        {/* <Route path={`/${this.props.nav}/:name`} />
-        <Link path={`/${this.props.nav}/:name`} component={Value}>{this.props.sub}</Link> */}
-        {
-          this.props.subNavItem.map(item => {
+        {this.props.subNavItem.map(item => {
             return (
               <React.Fragment>
-              <Route path={`${this.props.navItem.name}/${item.name}`} render={(props) => <Value {...props} item={item} />} />
-              <Link to={`${this.props.navItem.name}/${item.name}`}>{item.name}</Link>
-              <Value item={item} />
-            </React.Fragment>
+                <Value name={this.props.navItem.name} item={item} />
+                {/* IM STOPPING THE NESTING HERE, TOO SICK TO CONITNUE */}
+              </React.Fragment>
             )
           })
         }

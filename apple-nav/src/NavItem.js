@@ -10,6 +10,13 @@ export default class NavItem extends React.Component {
   render() {
     return (
       <div>
+        {
+          this.props.navItem.subNav.map(x => {
+            return (
+              <Link to="/asdf">{x}</Link>
+            )
+          })
+        }
         <Route path={`/${this.props.navItem.name}`} render={(props) => <SubNavItem subNavItem={this.props.navItem.subNav} {...props} navItem={this.props.navItem} /> } />
       </div>
     )
